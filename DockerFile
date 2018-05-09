@@ -1,4 +1,3 @@
-FROM microsoft/aspnetcore-build:2 as build-env
 # Build stage
 FROM microsoft/aspnetcore-build:2 AS build-env
 
