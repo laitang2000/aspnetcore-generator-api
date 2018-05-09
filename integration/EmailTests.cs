@@ -17,7 +17,7 @@ namespace integration
         [Fact]
         public async Task SendEmailWithNames_IsFromGenerator()
         {
-            // send email
+            // send email test
             var client = new HttpClient();
 
 

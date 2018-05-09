@@ -10,6 +10,7 @@ namespace tests
         [Fact]
         public void CountShouldControlNumberOfResults()
         {
+            //my test
             var range = new Range { Count = 3 };
 
             var generated = range.Of(() => "");
