@@ -7,3 +7,4 @@ infra/
 **/Dockerfile*
 **/.dockerignore*
 **/docker-compose*.yml
+**/*.user
