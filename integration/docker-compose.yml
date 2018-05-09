@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   generator:
-    image: my-registry:55000/gen:ci-8
+    image: my-registry:55000/gen:ci-${GENERATOR_BUILD_NUMBER-10}
     #ports:
     #  - "8080:80"
   mail:
@@ -10,7 +10,7 @@ services:
     #ports:
     #  - "8025:8025"
   integration:
-    image: my-registry:55000/gen:integration-8
+    image: my-registry:55000/gen:integration-${BUILD_NUMBER-10}
     build: .
     environment:
       - TEAMCITY_PROJECT_NAME
@@ -22,3 +22,17 @@ services:
  #--force-recreate \
  #--abort-on-container-exit \
  #--build
+ 
+ 
+ ##GENERATOR_BUILD_NUMBER is a environmental variable setup by user
+ ## we need this build number as it is different to the build number of the integration test
+ ## the integration test needs to add a dependency to the main build so we can see it and reference the build of the source
+## after we get the reference, in the integration section add a new parameter - which is going to be the type environment variable
+## ensure that thhe variable name is between %% e.g. %dep.AspnetcoreGeneratorApi_Build.build.number%
+
+##end product this will grab the image of the last successful build and push of thhe source and not rely on the build number of thhe ci test whic hwill be wrong.
+
+##-10 is a default value
+
+
+## - TEAMCITY_PROJECT_NAME is a short hand to print thhe project name
