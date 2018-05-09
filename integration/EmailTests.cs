@@ -28,6 +28,7 @@ namespace integration
             };
             Console.WriteLine($"Sending email: {sendEmail.RequestUri}");
             Console.WriteLine($"Sending email: {sendEmail.RequestUri}");
+            Console.WriteLine($"Sending email: {sendEmail.RequestUri}");
             using (var response = await client.SendAsync(sendEmail))
             {
                 response.EnsureSuccessStatusCode();
