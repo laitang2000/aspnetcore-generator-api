@@ -17,6 +17,8 @@ namespace tests
 
             Assert.Equal(3, generated.Count());
             Assert.Equal(3, generated.Count());
+            Assert.Equal(3, generated.Count());
+            Assert.Equal(3, generated.Count());
         }
         
         [Fact]
