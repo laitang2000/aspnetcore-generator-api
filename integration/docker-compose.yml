@@ -14,3 +14,11 @@ services:
     build: .
     environment:
       - TEAMCITY_PROJECT_NAME
+      
+      
+      
+      ##team city command line setting - remember to set working directory
+      #docker-compose up \
+ #--force-recreate \
+ #--abort-on-container-exit \
+ #--build

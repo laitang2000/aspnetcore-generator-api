@@ -24,3 +24,10 @@ FROM microsoft/aspnetcore:2
 COPY --from=build-env /publish /publish
 WORKDIR /publish
 ENTRYPOINT ["dotnet", "api.dll"]
+
+
+##command line on team city to creating the image after successful test run
+#image="my-registry:55000/gen:ci-%build.number%"
+#docker build -t $image .
+
+#docker push $image
